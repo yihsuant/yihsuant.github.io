@@ -151,7 +151,7 @@ body {
 .logo {
   width: 94px;
   height: 57px;
-  background-image: url("images/Blair.jpg");
+  background-image: url("images/logo.png");
   -webkit-background-size: 74px 28px;
   -moz-background-size: 74px 28px;
   background-size: 74px 28px;
@@ -285,6 +285,7 @@ a.article-title:hover,
   border-bottom: 1px solid #ddd;
   background-color: #4cb07b;
   background-color: #e01258;
+  background-color: #42b983;
 }
 #header.mobile-on #main-nav,
 #header.mobile-on #sub-nav {
