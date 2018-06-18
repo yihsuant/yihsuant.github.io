@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[互联网金融风控中的数据科学 (part2)  ： 模型策略]]></title>
+      <url>http://iequa.com/2018/04/21/data-science-internet-finance-2/</url>
+      <content type="html"><![CDATA[<p>反欺诈也是一种机器学习过程</p>
+<a id="more"></a>
+<h2 id="反欺诈建模中的数据科学"><a href="#反欺诈建模中的数据科学" class="headerlink" title="反欺诈建模中的数据科学"></a>反欺诈建模中的数据科学</h2><p><img src="/images/datascience/finance-8.jpg" width="850"></p>
+<h2 id="反欺诈也是一种机器学习过程"><a href="#反欺诈也是一种机器学习过程" class="headerlink" title="反欺诈也是一种机器学习过程"></a>反欺诈也是一种机器学习过程</h2><p><img src="/images/datascience/finance-9.jpg" width="850"></p>
+<blockquote>
+<p>对于做互联网金融一般情况是 正负样本 是极度不平衡的(最高可以达到 100 : 1), 这样的情况对于 SVM 这种分类器是不合适的，所以在做金融的<strong>评分卡模型</strong> 或 <strong>欺诈模型</strong> 也好，这样对特征的处理 和 样本的非平衡处理是比较高的.</p>
+<p>好坏用户的定义，一般是根据用户的贷后表现，来定义好坏用户的.</p>
+</blockquote>
+<p>举个栗子🌰 :</p>
+<blockquote>
+<p>用户借款 5W 元，可能是分期还款 12个月，这样每个月都会还一笔固定的额度.</p>
+<p><strong>信用风险</strong> : 在挺长的时间可以按时还款.</p>
+<p><strong>欺诈风险</strong> : </p>
+<ol>
+<li>用户可能 第 1、2 期 是还的，之后是不还的.<br> (因为中介也越来越聪明，给他自己留出时间，躲避催收的手段，也躲避追踪等等)</li>
+<li>贷前审核 （触碰到拒贷规则）</li>
+<li>造假行为 （信息资料造假）</li>
+<li>调查员 调查出来是 <strong>中介</strong> 或者 <strong>有欺诈风向的</strong>，进入黑名单的.</li>
+<li>…</li>
+</ol>
+<p>所以我们在定义模型负样本的话，我们可能定义为 m1+ 信用风险、m3+ (90天以上不还款的话)，我们可以定义为欺诈风险</p>
+<p><code>坏用户</code> ： 欺诈风险用户<br><code>好用户</code> ： 一天都不逾期还款<br><code>灰用户</code> ： m1+ 未还款，但是90天之内可以还款的 (不放在训练中，否则会给模型带来很多额外的信息，影响效果)</p>
+</blockquote>
+<p>金融模型 和 CTR 预估的相比是 有一个周期性质的</p>
+<blockquote>
+<ol>
+<li>广告点击的话，用户点击，立马有一个样本出现</li>
+<li>做长期现金贷，选择样本是选择半年之前的用户，作为样本</li>
+</ol>
+</blockquote>
+<h2 id="模型策略"><a href="#模型策略" class="headerlink" title="模型策略"></a>模型策略</h2><p><img src="/images/datascience/finance-10.jpg" width="800"></p>
+<h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p><img src="/images/datascience/finance-11.jpg" width="800"></p>
+<h3 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h3><p><img src="/images/datascience/finance-12.jpg" width="800"></p>
+<h3 id="Decision-Tree"><a href="#Decision-Tree" class="headerlink" title="Decision Tree"></a>Decision Tree</h3><p><img src="/images/datascience/finance-13.jpg" width="850"></p>
+<h3 id="Random-Forest"><a href="#Random-Forest" class="headerlink" title="Random Forest"></a>Random Forest</h3><p><img src="/images/datascience/finance-14.png" width="850"></p>
+<h3 id="Gradient-Boosting-Regression-Tree"><a href="#Gradient-Boosting-Regression-Tree" class="headerlink" title="Gradient Boosting Regression Tree"></a>Gradient Boosting Regression Tree</h3><p><img src="/images/datascience/finance-15.png" width="850"></p>
+<blockquote>
+<hr>
+</blockquote>
+<p><img src="/images/datascience/finance-16.png" width="850"></p>
+<h2 id="结果评估-混淆矩阵"><a href="#结果评估-混淆矩阵" class="headerlink" title="结果评估-混淆矩阵"></a>结果评估-混淆矩阵</h2><ul>
+<li>Precision: 评估认定坏用户的精确度</li>
+<li>Recall: 评估坏用户的召回率</li>
+<li>F-Measure: 组合判断</li>
+</ul>
+<p><img src="/images/datascience/finance-17.png" width="830"></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://myslide.cn/slides/3199" target="_blank" rel="external">金融反欺诈场景下的Spark实践</a></li>
+<li><a href="http://www.itdks.com/dakalive/detail/442" target="_blank" rel="external">大咖说 王婷</a></li>
+</ul>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
