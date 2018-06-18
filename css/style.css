@@ -284,6 +284,7 @@ a.article-title:hover,
   position: relative;
   border-bottom: 1px solid #ddd;
   background-color: #4cb07b;
+  background-color: #e01258;
 }
 #header.mobile-on #main-nav,
 #header.mobile-on #sub-nav {
@@ -670,6 +671,7 @@ span
   line-height: 1.4em;
   margin: 1em 0;
   color: #4cb07b;
+  color: #e01258;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 150%;
